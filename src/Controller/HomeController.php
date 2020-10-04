@@ -19,6 +19,7 @@ class HomeController {
 
 
     public function index(): Response {
+        #return new Response('Mon agence');
         return new Response($this->twig->render('pages/home.html.twig'));
     }
 
