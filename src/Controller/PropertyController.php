@@ -12,6 +12,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+class PropertyController {
+=======
+>>>>>>> Stashed changes
 class PropertyController extends AbstractController {
 
     /**
@@ -29,6 +35,10 @@ class PropertyController extends AbstractController {
         $this->repository = $repository;
         $this->em = $em;
     }
+<<<<<<< Updated upstream
+=======
+>>>>>>> feat/doctrine
+>>>>>>> Stashed changes
 
     /**
      * @Route("/biens", name="property.index")
