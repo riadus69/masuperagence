@@ -12,7 +12,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-class PropertyController extends AbstractController{
+
+class PropertyController extends AbstractController {
 
     /**
      * @var PropertyRepository
@@ -29,6 +30,7 @@ class PropertyController extends AbstractController{
         $this->repository = $repository;
         $this->em = $em;
     }
+
 
     /**
      * @Route("/biens", name="property.index")
