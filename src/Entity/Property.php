@@ -5,9 +5,12 @@ namespace App\Entity;
 use App\Repository\PropertyRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Cocur\Slugify\Slugify;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=PropertyRepository::class)
+ * @UniqueEntity("title")  pour eviter la repétition des annonce grace au title biblo => use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class Property
 {
@@ -30,6 +33,7 @@ class Property
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min = 5, max = 255)
      */
     private $title;
 
@@ -40,6 +44,7 @@ class Property
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Range(min = 10, max = 400)
      */
     private $surface;
 
@@ -74,7 +79,9 @@ class Property
     private $city;
 
     /**
+     * Mon regex n'accepte que les chiffres x 5
      * @ORM\Column(type="string", length=255)
+     * @Assert\Regex("/^[0-9]{5}$/")
      */
     private $postal_code;
 
